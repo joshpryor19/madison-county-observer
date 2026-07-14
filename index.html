@@ -6,6 +6,7 @@
 <title>The Madison County Observer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/responsive.css">
 <style>
   body { margin: 0; background: #f4f1ea; }
   a { color: #1e4d3b; }
@@ -19,11 +20,11 @@
   <div style="text-align:center">
     <div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#1e4d3b;margin-bottom:12px">EST. WHEN NO ONE WAS LOOKING &middot; ALL EYES ON MADISON COUNTY</div>
     <a href="index.html" style="text-decoration:none;color:#121210">
-      <h1 style="font-family:'Playfair Display',serif;font-weight:900;font-size:60px;letter-spacing:1px;margin:0;line-height:1.05">THE MADISON COUNTY OBSERVER</h1>
+      <h1 class="mco-title" style="font-family:'Playfair Display',serif;font-weight:900;font-size:60px;letter-spacing:1px;margin:0;line-height:1.05">THE MADISON COUNTY OBSERVER</h1>
     </a>
     <div style="margin-top:16px;border-top:3px solid #121210;padding-top:3px;border-bottom:1px solid #121210"></div>
   </div>
-  <nav style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;padding:14px 0;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1.5px;border-bottom:1px solid #121210">
+  <nav class="mco-nav" style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;padding:14px 0;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1.5px;border-bottom:1px solid #121210">
     <a href="index.html" style="color:#1e4d3b;text-decoration:none">FRONT PAGE</a>
     <a href="article2.html" style="color:#121210;text-decoration:none">TOWN HALL DISPATCHES</a>
     <a href="article.html" style="color:#121210;text-decoration:none">MATTERS OF COMMERCE</a>
@@ -33,7 +34,7 @@
     <a href="merch.html" style="color:#121210;text-decoration:none">MERCH</a>
     <a href="contact.html" style="color:#121210;text-decoration:none">CONTACT</a>
   </nav>
-  <div style="display:flex;justify-content:space-between;padding:9px 2px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a">
+  <div class="mco-dateline" style="display:flex;justify-content:space-between;padding:9px 2px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a">
     <span data-mco-date></span>
     <span>FREE &mdash; TAKE ONE (WE'RE WATCHING)</span>
   </div>
@@ -47,8 +48,8 @@
 
 <main style="max-width:1120px;margin:0 auto;padding:44px 24px 10px">
   <div style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center">
-    <a href="article.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/walmart-berea.png" alt="The site of Berea's second Walmart" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/walmart-berea.png" alt="The site of Berea's second Walmart" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">MATTERS OF COMMERCE</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Berea to Get Second Walmart Before First Kroger</h2>
@@ -57,8 +58,8 @@
       </div>
     </a>
 
-    <a href="article2.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/eku-planetarium.png" alt="The Hummel Planetarium at EKU" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article2.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/eku-planetarium.png" alt="The Hummel Planetarium at EKU" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">TOWN HALL DISPATCHES</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Leaked EKU Master Plan Shows Phased Demolition of Entire City of Richmond</h2>
@@ -67,8 +68,8 @@
       </div>
     </a>
 
-    <a href="article3.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/bge-celebration.png" alt="Blue Grass Energy celebration" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article3.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/bge-celebration.png" alt="Blue Grass Energy celebration" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">CRIME BLOTTER</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Blue Grass Energy Hosts &ldquo;Rate Increase Celebration&rdquo; at Jeff Ruby's</h2>
@@ -77,8 +78,8 @@
       </div>
     </a>
 
-    <a href="article4.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/sasquatch-interview.png" alt="Sasquatch interviewed near Owsley Fork Reservoir" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article4.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/sasquatch-interview.png" alt="Sasquatch interviewed near Owsley Fork Reservoir" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">THE SOCIETY PAGES</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">EXCLUSIVE: Sasquatch Breaks Silence Ahead of Big Hill Line Hearing</h2>
@@ -87,8 +88,8 @@
       </div>
     </a>
 
-    <a href="article5.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/turkey-walmart.png" alt="A live turkey in the Richmond Walmart" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article5.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/turkey-walmart.png" alt="A live turkey in the Richmond Walmart" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">MATTERS OF COMMERCE</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Live Turkey Found in Richmond Walmart Meat Cooler Triggers Nationwide Recall</h2>
@@ -97,8 +98,8 @@
       </div>
     </a>
 
-    <a href="article6.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/jim-caldwell.png" alt="Jim Caldwell, former WKYT meteorologist" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article6.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/jim-caldwell.png" alt="Jim Caldwell, former WKYT meteorologist" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">THE SOCIETY PAGES</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Jim Caldwell Leaves WKYT After Altercations With Sentient AI Radar System</h2>
@@ -107,8 +108,8 @@
       </div>
     </a>
 
-    <a href="article7.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:340px;background:#fff;border:1px solid #121210">
-      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/mamdani-line.png" alt="Crowds lined up in Richmond" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
+    <a href="article7.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;width:100%;max-width:340px;background:#fff;border:1px solid #121210">
+      <div style="width:100%;height:210px;overflow:hidden;border-bottom:1px solid #121210"><img src="assets/mamdani-line.png" alt="Crowds lined up in Richmond" class="mco-card-img" style="width:100%;height:100%;object-fit:cover;filter:grayscale(0.3) contrast(1.05)"></div>
       <div style="padding:22px;display:flex;flex-direction:column;gap:12px;flex:1">
         <span style="align-self:flex-start;font-family:'Courier Prime',monospace;font-size:10px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;padding:5px 9px">TOWN HALL DISPATCHES</span>
         <h2 style="font-family:'Playfair Display',serif;font-weight:700;font-size:22px;line-height:1.28;margin:0">BREAKING: Thousands Line Up in Richmond to Vote for New York City Mayor Candidate, Zohran Mamdani</h2>
