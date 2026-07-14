@@ -92,14 +92,21 @@
     <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;margin:0 0 6px">Letters to the Editor</h3>
     <p style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.5px;color:#55524a;margin:0 0 26px">Speak now, or forever hold your suspicions.</p>
 
-    <div id="letters-container"></div>
-
-    <div style="border:1px solid #121210;background:#fff;padding:22px">
-      <div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-bottom:14px">FILE A LETTER</div>
-      <input id="letter-name" type="text" placeholder="Your name" style="width:100%;box-sizing:border-box;font-family:'PT Serif',serif;font-size:15px;padding:10px 12px;border:1px solid #121210;margin-bottom:12px;background:#f4f1ea"/>
-      <textarea id="letter-text" placeholder="What did you see?" rows="4" style="width:100%;box-sizing:border-box;font-family:'PT Serif',serif;font-size:15px;padding:10px 12px;border:1px solid #121210;margin-bottom:14px;background:#f4f1ea;resize:vertical"></textarea>
-      <button id="letter-submit" style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;border:none;padding:12px 22px;cursor:pointer">SUBMIT TESTIMONY</button>
-    </div>
+    <script src="https://giscus.app/client.js"
+            data-repo="joshpryor19/madison-county-observer"
+            data-repo-id="R_kgDOTYdKVg"
+            data-category="General"
+            data-category-id="DIC_kwDOTYdKVs4DBM6Z"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            crossorigin="anonymous"
+            async>
+    </script>
   </section>
 </main>
 
@@ -111,9 +118,5 @@
   </span>
 </footer>
 <script type="module" src="js/main.js"></script>
-<script src="js/comments.js"></script>
-<script>
-  initMcoComments('mco-comments-turkey-walmart', 'letters-container', 'letter-name', 'letter-text', 'letter-submit');
-</script>
 </body>
 </html>
