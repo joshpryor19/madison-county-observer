@@ -6,16 +6,49 @@ html, body {
   overflow-x: hidden;
 }
 
+.mco-nav-toggle {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .mco-title {
     font-size: 34px !important;
     letter-spacing: 0.5px !important;
   }
 
+  .mco-nav-toggle {
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    border-top: 1px solid #121210;
+    padding: 12px 0;
+    font-family: 'Courier Prime', monospace;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #121210;
+    cursor: pointer;
+  }
+
+  .mco-nav-toggle span {
+    font-size: 16px;
+    line-height: 1;
+  }
+
   .mco-nav {
-    gap: 14px !important;
-    font-size: 11px !important;
-    padding: 10px 0 !important;
+    display: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    font-size: 13px !important;
+    padding: 18px 0 !important;
+  }
+
+  .mco-nav.mco-nav-open {
+    display: flex !important;
   }
 
   .mco-dateline {

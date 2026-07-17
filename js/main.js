@@ -12,3 +12,12 @@ if (tickerEls.length) {
     })
     .catch(() => {});
 }
+
+document.querySelectorAll('.mco-nav-toggle').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const nav = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!nav) return;
+    const isOpen = nav.classList.toggle('mco-nav-open');
+    btn.setAttribute('aria-expanded', String(isOpen));
+  });
+});
