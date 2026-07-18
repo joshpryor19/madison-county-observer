@@ -71,28 +71,32 @@
   </div>
 </header>
 
-<main id="main-content" style="max-width:640px;margin:0 auto;padding:50px 24px 20px">
-  <h1 style="font-family:'Playfair Display',serif;font-weight:900;font-size:38px;margin:0 0 6px;text-align:center">Contact the Observer</h1>
-  <p style="text-align:center;font-family:'PT Serif',serif;font-style:italic;font-size:16px;color:#55524a;margin:0 0 40px">Tips, complaints, and confessions welcome. Discretion guaranteed.</p>
-
-  <div style="border:1px solid #121210;background:#fff;padding:26px">
-    <div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-bottom:14px">FILE A REPORT</div>
-
-    <label style="display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-bottom:6px">YOUR NAME</label>
-    <input id="contact-name" type="text" placeholder="Optional" style="width:100%;box-sizing:border-box;font-family:'PT Serif',serif;font-size:15px;padding:10px 12px;border:1px solid #121210;margin-bottom:16px;background:#f4f1ea"/>
-
-    <label style="display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-bottom:6px">YOUR EMAIL</label>
-    <input id="contact-email" type="email" placeholder="So we can write back" style="width:100%;box-sizing:border-box;font-family:'PT Serif',serif;font-size:15px;padding:10px 12px;border:1px solid #121210;margin-bottom:16px;background:#f4f1ea"/>
-
-    <label style="display:block;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-bottom:6px">MESSAGE</label>
-    <textarea id="contact-message" placeholder="What do you know, and how do you know it?" rows="6" style="width:100%;box-sizing:border-box;font-family:'PT Serif',serif;font-size:15px;padding:10px 12px;border:1px solid #121210;margin-bottom:18px;background:#f4f1ea;resize:vertical"></textarea>
-
-    <button id="contact-submit" style="width:100%;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1.5px;color:#f4f1ea;background:#1e4d3b;border:none;padding:14px 22px;cursor:pointer">SEND TO THE OBSERVER &rarr;</button>
-
-    <div style="font-family:'Courier Prime',monospace;font-size:10.5px;letter-spacing:0.5px;color:#9a968c;margin-top:14px;text-align:center">Opens your email client, addressed to madisoncountyobserver@gmail.com</div>
+<main id="main-content" class="mco-main">
+  <div class="mco-shell mco-reading-column" style="text-align:center">
+    <h1>File a Field Report</h1>
+    <p class="mco-deck" style="margin-inline:auto">Tips, complaints, sightings, public documents, and confessions welcome. Discretion guaranteed.</p>
   </div>
 
-  <p style="text-align:center;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a;margin-top:30px">OR WRITE DIRECTLY TO <a href="mailto:madisoncountyobserver@gmail.com" style="color:#1e4d3b">MADISONCOUNTYOBSERVER@GMAIL.COM</a></p>
+  <div class="mco-shell mco-reading-column" style="margin-top:var(--mco-space-6)">
+    <form class="mco-form" id="contact-form">
+      <label>
+        Your name
+        <input id="contact-name" type="text" placeholder="Optional" autocomplete="name">
+      </label>
+      <label>
+        Your email
+        <input id="contact-email" type="email" placeholder="So we can write back" autocomplete="email">
+      </label>
+      <label>
+        Message
+        <textarea id="contact-message" placeholder="What do you know, and how do you know it?" rows="6"></textarea>
+      </label>
+      <button class="mco-button" type="button" id="contact-submit">Send to the Observer &rarr;</button>
+      <p style="text-align:center;font-family:var(--mco-font-institutional);font-size:0.72rem;letter-spacing:0.045em;color:var(--mco-file-gray);margin:0">Opens your email client, addressed to madisoncountyobserver@gmail.com</p>
+    </form>
+
+    <p style="text-align:center;font-family:var(--mco-font-institutional);font-size:0.78rem;letter-spacing:0.06em;margin-top:var(--mco-space-6)">Or write directly to <a href="mailto:madisoncountyobserver@gmail.com">madisoncountyobserver@gmail.com</a></p>
+  </div>
 </main>
 
 <footer class="mco-footer">
