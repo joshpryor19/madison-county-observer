@@ -72,4 +72,24 @@ console.log(
       fire();
     }
   });
+
+  // Typing a secret word requires a keyboard, which touch devices don't
+  // have without focusing a field (and focused fields are ignored above).
+  // Tapping the masthead eye five times in a row is the touch equivalent.
+  var eye = document.querySelector('.mco-eye-placeholder');
+  if (eye) {
+    var tapCount = 0;
+    var lastTap = 0;
+    var TAP_TARGET = 5;
+    var TAP_WINDOW_MS = 2000;
+    eye.addEventListener('click', function () {
+      var now = Date.now();
+      tapCount = (now - lastTap < TAP_WINDOW_MS) ? tapCount + 1 : 1;
+      lastTap = now;
+      if (tapCount >= TAP_TARGET) {
+        tapCount = 0;
+        fire();
+      }
+    });
+  }
 })();
