@@ -37,6 +37,13 @@
 </head>
 <body>
 
+<!--
+  Congratulations on viewing source. This is the kind of diligence we
+  wish our elected officials showed. Nothing further to disclose at
+  this time.
+  — Legal Counsel, Retained Regrettably
+-->
+
 <a class="mco-skip-link" href="#main-content">Skip to the record</a>
 <header class="mco-site-header">
   <div class="mco-utility-bar">
@@ -142,6 +149,35 @@
     </div>
   </div>
 </footer>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="mco-egg-static-filter" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise">
+      <animate attributeName="seed" values="1;14;3;29;8;21;5;33;11;2" dur="0.4s" repeatCount="indefinite" />
+    </feTurbulence>
+    <feColorMatrix in="noise" type="saturate" values="0" result="mono" />
+    <feComponentTransfer in="mono">
+      <feFuncA type="linear" slope="0.45" intercept="0" />
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<div id="mco-egg-overlay" aria-hidden="true">
+  <div class="mco-egg-interference">
+    <div class="mco-egg-vignette"></div>
+    <div class="mco-egg-static"></div>
+    <div class="mco-egg-roll"></div>
+    <div class="mco-egg-scanlines"></div>
+  </div>
+  <div class="mco-egg-rec"><span class="mco-egg-rec-dot"></span> REC <span id="mco-egg-timer">00:00</span></div>
+  <div class="mco-egg-stamp">SUBJECT: READER<br>STATUS: OBSERVED</div>
+</div>
+<div id="mco-egg-flash" aria-hidden="true"></div>
+<div id="mco-egg-toast" role="status" aria-live="polite">
+  <div class="mco-egg-headline">You've been made.</div>
+  <div class="mco-egg-sub">We're watching you watching us.</div>
+</div>
+
 <script type="module" src="js/main.js"></script>
+<script src="js/easter-eggs.js"></script>
 </body>
 </html>

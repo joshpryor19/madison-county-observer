@@ -936,6 +936,187 @@ p {
   white-space: nowrap;
 }
 
+/* Easter egg: type WATCHING anywhere to trigger */
+
+#mco-egg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+#mco-egg-overlay.active {
+  opacity: 1;
+}
+
+#mco-egg-overlay .mco-egg-interference {
+  position: absolute;
+  inset: -10px;
+}
+
+#mco-egg-overlay .mco-egg-interference.mco-egg-jitter {
+  animation: mco-egg-jitter 2.3s steps(1) infinite;
+}
+
+@keyframes mco-egg-jitter {
+  0%, 87%, 100% { transform: translate(0, 0); }
+  89% { transform: translate(-8px, 1px); }
+  90.5% { transform: translate(6px, -1px); }
+  92% { transform: translate(-3px, 0); }
+  93.5% { transform: translate(2px, 0); }
+  95% { transform: translate(0, 0); }
+}
+
+#mco-egg-overlay .mco-egg-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 55%, rgb(23 25 21 / 55%) 100%);
+}
+
+#mco-egg-overlay .mco-egg-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(23 25 21 / 0%) 0,
+    rgb(23 25 21 / 0%) 3px,
+    rgb(23 25 21 / 9%) 4px
+  );
+  mix-blend-mode: multiply;
+}
+
+#mco-egg-overlay .mco-egg-static {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  filter: url(#mco-egg-static-filter);
+  mix-blend-mode: overlay;
+}
+
+#mco-egg-overlay .mco-egg-roll {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgb(251 248 239 / 14%) 46%,
+    rgb(251 248 239 / 22%) 50%,
+    rgb(251 248 239 / 14%) 54%,
+    transparent 100%
+  );
+  background-size: 100% 240%;
+  background-repeat: no-repeat;
+  animation: mco-egg-roll 2.8s linear infinite;
+  mix-blend-mode: overlay;
+}
+
+@keyframes mco-egg-roll {
+  0% { background-position: 0 -140%; }
+  100% { background-position: 0 140%; }
+}
+
+#mco-egg-overlay .mco-egg-rec {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid rgb(251 248 239 / 35%);
+  background: rgb(23 25 21 / 55%);
+  font-family: var(--mco-font-data);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  color: var(--mco-paper-light);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 60%);
+}
+
+#mco-egg-overlay .mco-egg-rec-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--mco-correction-brick);
+  box-shadow: 0 0 10px 1px rgb(169 72 52 / 70%);
+  animation: mco-egg-pulse 1s ease-in-out infinite;
+}
+
+@keyframes mco-egg-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+#mco-egg-overlay .mco-egg-stamp {
+  position: absolute;
+  bottom: 24px;
+  right: 20px;
+  background: var(--mco-bureau-green);
+  color: var(--mco-transmission-amber);
+  font-family: var(--mco-font-data);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  text-align: right;
+  line-height: 1.5;
+}
+
+#mco-egg-flash {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  background: var(--mco-paper-light);
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mco-egg-flash.mco-egg-fire {
+  animation: mco-egg-flash 0.35s ease-out;
+}
+
+@keyframes mco-egg-flash {
+  0% { opacity: 0; }
+  15% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+#mco-egg-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  z-index: 999;
+  transform: translate(-50%, 140%);
+  transition: transform 0.4s ease;
+  border: 1px solid var(--mco-ink);
+  background: var(--mco-ink);
+  color: var(--mco-paper-light);
+  padding: 16px 22px;
+  text-align: center;
+  min-width: 280px;
+}
+
+#mco-egg-toast.active {
+  transform: translate(-50%, 0);
+}
+
+#mco-egg-toast .mco-egg-headline {
+  font-family: var(--mco-font-institutional);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+  color: var(--mco-transmission-amber);
+  text-transform: uppercase;
+}
+
+#mco-egg-toast .mco-egg-sub {
+  margin-top: 4px;
+  font-family: var(--mco-font-editorial);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
 /* Footer */
 .mco-footer {
   padding-block: var(--mco-space-6);
@@ -1094,6 +1275,10 @@ p {
     width: auto;
     animation: none;
     white-space: normal;
+  }
+
+  #mco-egg-overlay .mco-egg-static {
+    display: none;
   }
 
   .mco-ticker__item[aria-hidden="true"] {
