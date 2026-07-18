@@ -685,9 +685,72 @@ p {
   color: var(--mco-paper-light);
 }
 
+.mco-notice--transmission a,
+.mco-notice--transmission .mco-kicker {
+  color: var(--mco-transmission-amber);
+}
+
 .mco-notice--amber {
   background: var(--mco-transmission-amber);
   color: var(--mco-ink);
+}
+
+.mco-staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--mco-space-5);
+}
+
+.mco-staff-card {
+  border: 1px solid var(--mco-ink);
+  background: var(--mco-paper-light);
+  text-align: center;
+}
+
+.mco-staff-photo {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(0.15) contrast(1.03);
+}
+
+.mco-staff-photo--pending {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--mco-paper-light),
+    var(--mco-paper-light) 10px,
+    var(--mco-rule) 10px,
+    var(--mco-rule) 11px
+  );
+  border-bottom: 1px solid var(--mco-ink);
+  color: var(--mco-file-gray);
+  font-family: var(--mco-font-institutional);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--mco-space-3);
+}
+
+.mco-staff-card__body {
+  padding: var(--mco-space-4);
+}
+
+.mco-staff-card__role {
+  margin: 0;
+  font-family: var(--mco-font-data);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.mco-staff-card__name {
+  margin: 4px 0 0;
+  color: var(--mco-bureau-green);
+  font-family: var(--mco-font-data);
+  font-size: 0.8rem;
 }
 
 .mco-classified {
