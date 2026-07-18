@@ -602,6 +602,19 @@ p {
   line-height: 1.35;
 }
 
+.mco-flag {
+  display: inline-block;
+  margin: 0 0 var(--mco-space-3);
+  padding: 0.3rem 0.7rem;
+  background: var(--mco-ink);
+  color: var(--mco-paper-light);
+  font-family: var(--mco-font-data);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 /* Article */
 .mco-article-header {
   padding-top: var(--mco-space-6);
