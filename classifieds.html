@@ -15,6 +15,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/responsive.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Archivo+Narrow:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/mco-theme.css">
 <style>
   body { margin: 0; background: #f4f1ea; }
   a { color: #1e4d3b; }
@@ -24,41 +27,50 @@
 </head>
 <body>
 
-<div style="max-width:1120px;margin:0 auto;padding:40px 24px 0">
-  <div style="text-align:center">
-    <div style="font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:3px;color:#1e4d3b;margin-bottom:12px">EST. WHEN NO ONE WAS LOOKING &middot; ALL EYES ON MADISON COUNTY</div>
-    <a href="index.html" style="text-decoration:none;color:#121210">
-      <h1 class="mco-title" style="font-family:'Playfair Display',serif;font-weight:900;font-size:60px;letter-spacing:1px;margin:0;line-height:1.05">THE MADISON COUNTY OBSERVER</h1>
-    </a>
-    <div style="margin-top:16px;border-top:3px solid #121210;padding-top:3px;border-bottom:1px solid #121210"></div>
-  </div>
-  <button type="button" class="mco-nav-toggle" aria-expanded="false" aria-controls="mco-nav">
-    <span aria-hidden="true">&#9776;</span> MENU
-  </button>
-  <nav id="mco-nav" class="mco-nav" style="display:flex;flex-wrap:wrap;justify-content:center;gap:28px;padding:14px 0;font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:1.5px;border-bottom:1px solid #121210">
-    <a href="index.html" style="color:#121210;text-decoration:none">FRONT PAGE</a>
-    <a href="townhall.html" style="color:#121210;text-decoration:none">TOWN HALL DISPATCHES</a>
-    <a href="commerce.html" style="color:#121210;text-decoration:none">MATTERS OF COMMERCE</a>
-    <a href="society.html" style="color:#121210;text-decoration:none">THE SOCIETY PAGES</a>
-    <a href="crime.html" style="color:#121210;text-decoration:none">CRIME BLOTTER</a>
-    <a href="about.html" style="color:#121210;text-decoration:none">ABOUT</a>
-    <a href="merch.html" style="color:#121210;text-decoration:none">MERCH</a>
-    <a href="contact.html" style="color:#121210;text-decoration:none">CONTACT</a>
-    <a href="classifieds.html" style="color:#1e4d3b;text-decoration:none">CLASSIFIEDS</a>
-  </nav>
-  <div class="mco-dateline" style="display:flex;justify-content:space-between;padding:9px 2px;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1px;color:#55524a">
-    <span data-mco-date></span>
-    <span>FREE &mdash; TAKE ONE (WE'RE WATCHING)</span>
-  </div>
-  <div style="width:100%;background:#121210;overflow:hidden;white-space:nowrap;border-top:1px solid #1e4d3b;margin-top:2px">
-    <div style="display:inline-block;padding:8px 0;animation:mco-ticker 36s linear infinite;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:1.5px;color:#c9e8d6">
-      <span data-mco-ticker style="padding:0 40px">MADISON COUNTY WEATHER &middot; GATHERING INTELLIGENCE &middot; ALL EYES ON THE SKY</span>
-      <span data-mco-ticker style="padding:0 40px" aria-hidden="true">MADISON COUNTY WEATHER &middot; GATHERING INTELLIGENCE &middot; ALL EYES ON THE SKY</span>
+<a class="mco-skip-link" href="#main-content">Skip to the record</a>
+<header class="mco-site-header">
+  <div class="mco-utility-bar">
+    <div class="mco-shell mco-utility-bar__inner">
+      <span>Est. when no one was looking</span>
+      <span>All eyes on Madison County</span>
     </div>
   </div>
-</div>
 
-<main style="max-width:760px;margin:0 auto;padding:44px 24px 10px">
+  <div class="mco-shell mco-masthead">
+    <!-- TEMPORARY marker; replace with owned assets/mco-eye.svg -->
+    <span class="mco-eye-placeholder" aria-hidden="true"><span></span></span>
+    <p class="mco-wordmark"><a href="index.html">The Madison County Observer</a></p>
+    <span class="mco-issue-label"><span data-mco-date></span><br>Free &mdash; Take One<br>We're Watching</span>
+  </div>
+
+  <button type="button" class="mco-nav-toggle" aria-expanded="false" aria-controls="mco-nav">
+    <span aria-hidden="true">&#9776;</span> Menu
+  </button>
+  <nav id="mco-nav" class="mco-nav" aria-label="Primary navigation">
+    <div class="mco-shell">
+      <ul>
+        <li><a href="index.html">Front Page</a></li>
+        <li><a href="townhall.html">Town Hall Dispatches</a></li>
+        <li><a href="commerce.html">Matters of Commerce</a></li>
+        <li><a href="society.html">The Society Pages</a></li>
+        <li><a href="crime.html">Crime Blotter</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="merch.html">Merch</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="classifieds.html" aria-current="page">Classifieds</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mco-ticker" aria-label="Atmospheric surveillance status">
+    <div class="mco-ticker__track">
+      <span class="mco-ticker__item" data-mco-ticker>Madison County weather &middot; Gathering intelligence &middot; All eyes on the sky</span>
+      <span class="mco-ticker__item" data-mco-ticker aria-hidden="true">Madison County weather &middot; Gathering intelligence &middot; All eyes on the sky</span>
+    </div>
+  </div>
+</header>
+
+<main id="main-content" style="max-width:760px;margin:0 auto;padding:44px 24px 10px">
   <div style="text-align:center;margin-bottom:36px">
     <h1 style="font-family:'Playfair Display',serif;font-weight:900;font-size:40px;margin:0 0 8px">Classifieds</h1>
     <p style="font-family:'PT Serif',serif;font-style:italic;font-size:16px;color:#1e4d3b;margin:0">Buy it, sell it, report it missing. We don't ask questions. We just print them.</p>
@@ -163,12 +175,17 @@
   </div>
 </main>
 
-<footer style="max-width:1120px;margin:70px auto 0;padding:26px 24px 40px;border-top:4px double #121210;display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center;font-family:'Courier Prime',monospace;font-size:11px;letter-spacing:0.5px;color:#55524a">
-  <span>&copy; 2026 THE MADISON COUNTY OBSERVER &mdash; A WORK OF SATIRE &middot; <a href="privacy.html" style="color:#55524a">PRIVACY POLICY</a></span>
-  <span style="display:flex;align-items:center;gap:8px">
-    <svg width="18" height="18" viewBox="0 0 100 100" fill="none" stroke="#1e4d3b" stroke-width="5"><path d="M50 8 L92 82 L8 82 Z" stroke-linejoin="round"/><ellipse cx="50" cy="60" rx="24" ry="13"/><circle cx="50" cy="60" r="6" fill="#1e4d3b" stroke="none"/></svg>
-    NOT ACTUALLY SURVEILLING YOU. PROBABLY.
-  </span>
+<footer class="mco-footer">
+  <div class="mco-shell mco-footer__inner">
+    <div>
+      <strong>&copy; 2026 The Madison County Observer</strong><br>
+      Satire from Madison County, Kentucky. Some of it is also, unfortunately, true.
+    </div>
+    <div>
+      <a href="privacy.html">Privacy</a> &middot; <a href="contact.html">Contact</a><br>
+      Not actually surveilling you. Probably.
+    </div>
+  </div>
 </footer>
 <script type="module" src="js/main.js"></script>
 </body>
