@@ -1,0 +1,65 @@
+{
+  "brand": "The Madison County Observer",
+  "version": "1.0",
+  "colors": {
+    "ink": "#171915",
+    "paper": "#F4EBD8",
+    "paperLight": "#FBF8EF",
+    "bureauGreen": "#294C3D",
+    "transmissionAmber": "#C9972F",
+    "correctionBrick": "#A94834",
+    "fileGray": "#69675F",
+    "rule": "rgba(23, 25, 21, 0.28)",
+    "ruleLight": "rgba(244, 235, 216, 0.34)",
+    "shadow": "rgba(23, 25, 21, 0.12)"
+  },
+  "fonts": {
+    "editorial": "Newsreader, Georgia, 'Times New Roman', serif",
+    "institutional": "'Archivo Narrow', 'Arial Narrow', Arial, sans-serif",
+    "data": "'IBM Plex Mono', 'Courier New', monospace"
+  },
+  "layout": {
+    "siteMaxPx": 1200,
+    "readingMaxPx": 680,
+    "bodyDesktopPx": 19,
+    "bodyMinimumPx": 18,
+    "cornerRadiusPx": 0,
+    "ruleWidthPx": 1,
+    "spacingPx": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "imageMasters": {
+    "hero": {
+      "width": 2400,
+      "height": 1350
+    },
+    "openGraph": {
+      "width": 1200,
+      "height": 630
+    },
+    "square": {
+      "width": 1080,
+      "height": 1080
+    },
+    "portrait": {
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "evidenceClasses": [
+    "FIELD PHOTOGRAPH",
+    "VISUAL RECONSTRUCTION",
+    "INTERCEPTED BROADCAST",
+    "OBTAINED DOCUMENT",
+    "ARCHIVAL IMAGE",
+    "EDITORIAL ILLUSTRATION"
+  ]
+}

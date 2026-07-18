@@ -1,0 +1,190 @@
+<!--
+  Semantic component examples. Adapt to the repository's template system.
+  Do not paste duplicate IDs. Replace placeholder URLs, image data, and form endpoints.
+-->
+
+<!-- GLOBAL HEADER -->
+<a class="mco-skip-link" href="#main-content">Skip to the record</a>
+<header class="mco-site-header">
+  <div class="mco-utility-bar">
+    <div class="mco-shell mco-utility-bar__inner">
+      <span>Est. when no one was looking</span>
+      <span>All eyes on Madison County</span>
+    </div>
+  </div>
+
+  <div class="mco-shell mco-masthead">
+    <!-- TEMPORARY marker; replace with owned /assets/mco-eye.svg -->
+    <span class="mco-eye-placeholder" aria-hidden="true"><span></span></span>
+    <p class="mco-wordmark"><a href="/">The Madison County Observer</a></p>
+    <span class="mco-issue-label">Free — Take One<br>We're Watching</span>
+  </div>
+
+  <nav class="mco-nav" aria-label="Primary navigation">
+    <div class="mco-shell">
+      <ul>
+        <li><a href="/" aria-current="page">Front Page</a></li>
+        <li><a href="/town-hall.html">Town Hall</a></li>
+        <li><a href="/commerce.html">Commerce</a></li>
+        <li><a href="/society.html">Society</a></li>
+        <li><a href="/crime.html">Crime Blotter</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Field Reports</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mco-ticker" aria-label="Atmospheric surveillance status">
+    <div class="mco-ticker__track">
+      <span class="mco-ticker__item">Madison County weather · Gathering intelligence · All eyes on the sky</span>
+      <span class="mco-ticker__item" aria-hidden="true">Madison County weather · Gathering intelligence · All eyes on the sky</span>
+    </div>
+  </div>
+</header>
+
+<!-- ARTICLE HEADER -->
+<main id="main-content" class="mco-main">
+  <article class="mco-shell">
+    <header class="mco-article-header mco-reading-column">
+      <nav class="mco-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Front Page</a> / <a href="/town-hall.html">Town Hall Dispatches</a>
+      </nav>
+      <p class="mco-kicker">Town Hall Dispatches</p>
+      <h1>Article headline goes here</h1>
+      <p class="mco-deck">Article deck goes here.</p>
+      <div class="mco-article-meta">
+        <p class="mco-byline">By Staff Correspondent · Richmond, Madison County</p>
+        <span class="mco-file-code">FILE 008 / STATUS ACTIVE</span>
+      </div>
+    </header>
+
+    <!-- EVIDENCE FIGURE -->
+    <figure class="mco-evidence" data-evidence="reconstruction">
+      <div class="mco-evidence__media">
+        <img
+          src="/assets/example.jpg"
+          width="2400"
+          height="1350"
+          alt="Visual reconstruction of the satirical event described in the article."
+        >
+      </div>
+      <figcaption>
+        <div class="mco-file-strip">
+          <span>Visual Reconstruction</span>
+          <span class="mco-file-code">FILE 008</span>
+          <span class="mco-file-strip__status">Accuracy disputed by all parties</span>
+          <span class="mco-file-strip__eye" aria-hidden="true"></span>
+        </div>
+        <div class="mco-caption">Reconstruction based on available testimony and several highly confident gestures.</div>
+      </figcaption>
+    </figure>
+
+    <div class="mco-reading-column mco-article-body">
+      <!-- Preserve existing article body exactly. -->
+
+      <aside class="mco-related-inline" aria-label="Related file">
+        <strong>Related file</strong>
+        <a href="/article9.html">Berea Police Department Phases Out Neighborhood Grandmothers in Favor of AI-Powered Flock Cameras →</a>
+      </aside>
+    </div>
+
+    <!-- ARTICLE END -->
+    <section class="mco-continue" aria-labelledby="continue-heading">
+      <h2 id="continue-heading">Continue Monitoring</h2>
+      <div class="mco-story-grid">
+        <!-- Render 2–3 relevant story cards. -->
+      </div>
+    </section>
+
+    <section class="mco-brief-grid" aria-label="Observer participation">
+      <aside class="mco-notice mco-notice--transmission">
+        <p class="mco-kicker">Observer Intelligence Briefing</p>
+        <h2>Future transmissions are not guaranteed.</h2>
+        <p>Briefing enrollment opens soon.</p>
+        <!-- Replace with real form only after endpoint approval. -->
+      </aside>
+
+      <aside class="mco-notice">
+        <p class="mco-kicker">Field Reports</p>
+        <h2>Enter a statement into the record.</h2>
+        <p>Tips, complaints, public documents, sightings, and confessions welcome.</p>
+        <a class="mco-button" href="/contact.html">File a report</a>
+      </aside>
+    </section>
+  </article>
+</main>
+
+<!-- CORRECTION -->
+<aside class="mco-notice mco-notice--correction">
+  <p class="mco-kicker">Corrections &amp; Clarifications</p>
+  <h3>The record has been adjusted.</h3>
+  <p>Correction copy goes here. Real editorial corrections must be plain and unambiguous.</p>
+  <span class="mco-file-code">AMENDMENT 026-04</span>
+</aside>
+
+<!-- CLASSIFIED -->
+<article class="mco-classified">
+  <p class="mco-kicker">Classified Intelligence</p>
+  <h3>For Sale: Above-ground pool, currently below ground.</h3>
+  <p>Buyer responsible for excavation and explanation.</p>
+  <p class="mco-classified__meta">BEREA · REF 0041 · SERIOUS INQUIRIES DISCOURAGED</p>
+</article>
+
+<!-- PAID PUBLIC NOTICE TEMPLATE — DO NOT PUBLISH WITHOUT APPROVAL -->
+<aside class="mco-notice" data-sponsored="true">
+  <p class="mco-kicker">Paid Public Notice</p>
+  <h3>Approved sponsor headline</h3>
+  <p>Approved sponsor copy.</p>
+  <a class="mco-button mco-button--outline" href="https://example.com" rel="sponsored noopener">Visit sponsor</a>
+</aside>
+
+<!-- FIELD REPORT FORM: endpoint intentionally omitted -->
+<form class="mco-form" method="post" action="{{APPROVED_FIELD_REPORT_ENDPOINT}}">
+  <div class="mco-form__row">
+    <label>
+      Name or alias
+      <input name="name" autocomplete="name">
+    </label>
+    <label>
+      Email
+      <input type="email" name="email" autocomplete="email" required>
+    </label>
+  </div>
+  <div class="mco-form__row">
+    <label>
+      Report type
+      <select name="report_type" required>
+        <option value="">Select one</option>
+        <option>Public decision or document</option>
+        <option>Local irregularity</option>
+        <option>Correction</option>
+        <option>Strange sighting</option>
+        <option>Complaint or confession</option>
+      </select>
+    </label>
+    <label>
+      Location
+      <input name="location" autocomplete="address-level2">
+    </label>
+  </div>
+  <label>
+    Statement for the record
+    <textarea name="message" required></textarea>
+  </label>
+  <p>Do not submit confidential personal information. Factual allegations may require verification before publication.</p>
+  <button class="mco-button" type="submit">Transmit report</button>
+</form>
+
+<!-- FOOTER -->
+<footer class="mco-footer">
+  <div class="mco-shell mco-footer__inner">
+    <div>
+      <strong>The Madison County Observer</strong><br>
+      Satire from Madison County, Kentucky. Some of it is also, unfortunately, true.
+    </div>
+    <div>
+      <a href="/privacy.html">Privacy</a> · <a href="/contact.html">Field Reports</a><br>
+      Not actually surveilling you. Probably.
+    </div>
+  </div>
+</footer>
