@@ -38,6 +38,8 @@ console.log(
     if (active) return;
     active = true;
 
+    if (window.mcoCaseFile) window.mcoCaseFile.log('watching');
+
     if (!reduceMotion) {
       flash.classList.add('mco-egg-fire');
       setTimeout(function () { flash.classList.remove('mco-egg-fire'); }, 400);
