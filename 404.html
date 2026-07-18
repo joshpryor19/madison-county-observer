@@ -11,17 +11,9 @@
   gtag('js', new Date());
   gtag('config', 'G-RS7QKGF82X');
 </script>
-<title>Contact the Observer &mdash; The Madison County Observer</title>
-<meta name="description" content="Tips, complaints, sightings, and confessions welcome. File a field report with the Madison County Observer — discretion guaranteed.">
-<link rel="canonical" href="https://themadisoncountyobserver.com/contact.html">
-<meta property="og:site_name" content="The Madison County Observer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Contact the Observer — The Madison County Observer">
-<meta property="og:description" content="Tips, complaints, sightings, and confessions welcome. File a field report with the Madison County Observer — discretion guaranteed.">
-<meta property="og:url" content="https://themadisoncountyobserver.com/contact.html">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Contact the Observer — The Madison County Observer">
-<meta name="twitter:description" content="Tips, complaints, sightings, and confessions welcome. File a field report with the Madison County Observer — discretion guaranteed.">
+<title>File Not Found &mdash; The Madison County Observer</title>
+<meta name="robots" content="noindex">
+<meta name="description" content="This file has been removed from the record. Return to the Front Page or file a report of your own.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/responsive.css">
@@ -66,7 +58,7 @@
         <li><a href="crime.html">Crime Blotter</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="merch.html">Merch</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="classifieds.html">Classifieds</a></li>
         <li><a href="covers.html">Covers</a></li>
       </ul>
@@ -83,29 +75,31 @@
 
 <main id="main-content" class="mco-main">
   <div class="mco-shell mco-reading-column" style="text-align:center">
-    <h1>File a Field Report</h1>
-    <p class="mco-deck" style="margin-inline:auto">Tips, complaints, sightings, public documents, and confessions welcome. Discretion guaranteed.</p>
+    <div class="mco-notice" style="text-align:center">
+      <p class="mco-kicker" style="justify-content:center;display:flex">File Status</p>
+      <h1 style="margin-top:0">This File Has Been Removed</h1>
+      <p class="mco-deck" style="margin-inline:auto">The page you're looking for isn't on record &mdash; misfiled, redacted, or it never existed in the first place. We're not saying which.</p>
+    </div>
   </div>
 
-  <div class="mco-shell mco-reading-column" style="margin-top:var(--mco-space-6)">
-    <form class="mco-form" id="contact-form">
-      <label>
-        Your name
-        <input id="contact-name" type="text" placeholder="Optional" autocomplete="name">
-      </label>
-      <label>
-        Your email
-        <input id="contact-email" type="email" placeholder="So we can write back" autocomplete="email">
-      </label>
-      <label>
-        Message
-        <textarea id="contact-message" placeholder="What do you know, and how do you know it?" rows="6"></textarea>
-      </label>
-      <button class="mco-button" type="button" id="contact-submit">Send to the Observer &rarr;</button>
-      <p style="text-align:center;font-family:var(--mco-font-institutional);font-size:0.72rem;letter-spacing:0.045em;color:var(--mco-file-gray);margin:0">Opens your email client, addressed to madisoncountyobserver@gmail.com</p>
-    </form>
-
-    <p style="text-align:center;font-family:var(--mco-font-institutional);font-size:0.78rem;letter-spacing:0.06em;margin-top:var(--mco-space-6)">Or write directly to <a href="mailto:madisoncountyobserver@gmail.com">madisoncountyobserver@gmail.com</a></p>
+  <div class="mco-shell" style="margin-top:var(--mco-space-6);margin-bottom:var(--mco-space-7)">
+    <div class="mco-story-grid">
+      <aside class="mco-notice" style="text-align:center">
+        <p class="mco-kicker" style="justify-content:center;display:flex">Start Over</p>
+        <h3>Return to the Front Page</h3>
+        <a class="mco-button" href="index.html">Front Page &rarr;</a>
+      </aside>
+      <aside class="mco-notice" style="text-align:center">
+        <p class="mco-kicker" style="justify-content:center;display:flex">Browse the Files</p>
+        <h3>The county's classifieds, updated as filed.</h3>
+        <a class="mco-button mco-button--outline" href="classifieds.html">Classifieds &rarr;</a>
+      </aside>
+      <aside class="mco-notice" style="text-align:center">
+        <p class="mco-kicker" style="justify-content:center;display:flex">Field Reports</p>
+        <h3>Tell us what you know.</h3>
+        <a class="mco-button mco-button--outline" href="contact.html">File a report &rarr;</a>
+      </aside>
+    </div>
   </div>
 </main>
 
@@ -122,19 +116,5 @@
   </div>
 </footer>
 <script type="module" src="js/main.js"></script>
-<script>
-  document.getElementById('contact-submit').addEventListener('click', function () {
-    var name = document.getElementById('contact-name').value.trim();
-    var email = document.getElementById('contact-email').value.trim();
-    var message = document.getElementById('contact-message').value;
-    var subject = encodeURIComponent('Tip for the Madison County Observer');
-    var body = encodeURIComponent(
-      'Name: ' + (name || '(not provided)') + '\n' +
-      'Email: ' + (email || '(not provided)') + '\n\n' +
-      message
-    );
-    window.location.href = 'mailto:madisoncountyobserver@gmail.com?subject=' + subject + '&body=' + body;
-  });
-</script>
 </body>
 </html>
