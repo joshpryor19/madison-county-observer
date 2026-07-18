@@ -969,34 +969,17 @@ p {
 
 .mco-case-file__tally {
   display: flex;
+  align-items: flex-end;
   gap: 8px;
 }
 
-.mco-case-file__group {
-  position: relative;
-  display: flex;
-  gap: 2.5px;
-  align-items: flex-end;
-  height: 13px;
-  overflow: hidden;
+.mco-case-file__group-svg {
+  display: block;
+  color: var(--mco-ink);
 }
 
-.mco-case-file__mark {
-  width: 2px;
-  height: 13px;
-  background: var(--mco-ink);
-  flex: 0 0 auto;
-}
-
-.mco-case-file__strike {
-  position: absolute;
-  left: -2px;
-  top: 6px;
-  width: 19px;
-  height: 2px;
-  background: var(--mco-correction-brick);
-  transform: rotate(-40deg);
-  transform-origin: left center;
+.mco-case-file__group-svg .mco-case-file__strike-line {
+  stroke: var(--mco-correction-brick);
 }
 
 #mco-case-file-toast {
@@ -1084,46 +1067,79 @@ p {
 /* Print watermark */
 
 @media print {
+  /* All fixed-position UI chrome: hidden by default via transform/opacity
+     on screen, but browsers don't reliably respect that off-screen
+     positioning when printing, so it can show up on the page. Hide it
+     outright. */
+  .mco-skip-link,
+  #mco-egg-overlay,
+  #mco-egg-flash,
+  #mco-egg-toast,
+  #mco-case-file,
+  #mco-case-file-toast,
+  .mco-mini-toast,
+  .mco-otis-cameo,
+  .mco-nav-toggle {
+    display: none !important;
+  }
+
   body::after {
     content: "PRINTED WITHOUT AUTHORIZATION \2014 " attr(data-mco-print-date);
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 140%;
-    transform: translate(-50%, -50%) rotate(-30deg);
+    width: 70%;
+    max-width: 26rem;
+    transform: translate(-50%, -50%) rotate(-28deg);
     text-align: center;
     font-family: var(--mco-font-institutional);
-    font-size: 2.4rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
     color: rgb(23 25 21 / 18%);
     pointer-events: none;
     z-index: 9999;
+    white-space: normal;
   }
 }
 
-/* Otis cameo, Crime Blotter only */
+/* Otis, Classifieds page: appears when the Lost & Found header is clicked */
 
-.mco-otis-cameo {
-  position: fixed;
-  z-index: 800;
-  right: 10px;
-  bottom: 10px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 2px solid var(--mco-ink);
+.mco-otis-popup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 0;
+  padding: 0 12px;
+  border: 1px solid var(--mco-ink);
   background: var(--mco-paper-light);
-  padding: 0;
-  cursor: pointer;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
 }
 
-.mco-otis-cameo img {
-  width: 100%;
-  height: 100%;
+.mco-otis-popup.active {
+  opacity: 1;
+  max-height: 80px;
+  margin-top: var(--mco-space-3);
+  padding: 10px 12px;
+}
+
+.mco-otis-popup img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   object-fit: cover;
-  display: block;
+  flex: 0 0 auto;
+  filter: grayscale(0.15) contrast(1.03);
+}
+
+.mco-otis-popup span {
+  font-family: var(--mco-font-editorial);
+  font-style: italic;
+  font-size: 0.92rem;
 }
 
 /* Easter egg: type WATCHING anywhere to trigger */

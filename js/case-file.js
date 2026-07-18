@@ -37,22 +37,43 @@
     return groups;
   }
 
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+
   function renderTally(container, n) {
     container.innerHTML = '';
     tallyGroups(n).forEach(function (g) {
-      var group = document.createElement('span');
-      group.className = 'mco-case-file__group';
+      var width = g * 4 + 2;
+      var svg = document.createElementNS(SVG_NS, 'svg');
+      svg.setAttribute('class', 'mco-case-file__group-svg');
+      svg.setAttribute('width', width);
+      svg.setAttribute('height', 15);
+      svg.setAttribute('viewBox', '0 0 ' + width + ' 15');
+
       for (var i = 0; i < g; i++) {
-        var mark = document.createElement('span');
-        mark.className = 'mco-case-file__mark';
-        group.appendChild(mark);
+        var x = 2 + i * 4;
+        var mark = document.createElementNS(SVG_NS, 'line');
+        mark.setAttribute('x1', x);
+        mark.setAttribute('y1', 1);
+        mark.setAttribute('x2', x);
+        mark.setAttribute('y2', 14);
+        mark.setAttribute('stroke', 'currentColor');
+        mark.setAttribute('stroke-width', 1.6);
+        svg.appendChild(mark);
       }
+
       if (g === 5) {
-        var strike = document.createElement('span');
-        strike.className = 'mco-case-file__strike';
-        group.appendChild(strike);
+        var strike = document.createElementNS(SVG_NS, 'line');
+        strike.setAttribute('class', 'mco-case-file__strike-line');
+        strike.setAttribute('x1', 0);
+        strike.setAttribute('y1', 13);
+        strike.setAttribute('x2', width);
+        strike.setAttribute('y2', 2);
+        strike.setAttribute('stroke-width', 1.8);
+        strike.setAttribute('stroke-linecap', 'round');
+        svg.appendChild(strike);
       }
-      container.appendChild(group);
+
+      container.appendChild(svg);
     });
   }
 
@@ -61,7 +82,7 @@
     var el = document.createElement('div');
     el.id = 'mco-case-file';
     el.innerHTML =
-      '<p class="mco-case-file__kicker">Confidential &middot; Reader&rsquo;s File</p>' +
+      '<p class="mco-case-file__kicker">Confidential</p>' +
       '<div class="mco-case-file__tally"></div>';
     document.body.appendChild(el);
     return el;
@@ -81,7 +102,7 @@
     toast.setAttribute('aria-live', 'polite');
     toast.innerHTML =
       '<div class="mco-case-file-toast__headline">File Complete.</div>' +
-      '<div class="mco-case-file-toast__sub">Every exhibit recovered. We&rsquo;re impressed. Slightly concerned. Impressed.</div>';
+      '<div class="mco-case-file-toast__sub">Every exhibit recovered. Impressive, and slightly concerning.</div>';
     document.body.appendChild(toast);
     requestAnimationFrame(function () { toast.classList.add('active'); });
     setTimeout(function () {
@@ -97,9 +118,12 @@
       badge.className = 'mco-case-badge';
       badge.title = 'Case file: complete';
       badge.innerHTML =
-        '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">' +
-        '<circle cx="10" cy="10" r="7" fill="none" stroke="currentColor" stroke-width="2"/>' +
-        '<line x1="15.2" y1="15.2" x2="21" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' +
+        '<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5">' +
+        '<rect x="4.5" y="6" width="5" height="8" rx="1.6"/>' +
+        '<rect x="14.5" y="6" width="5" height="8" rx="1.6"/>' +
+        '<path d="M9.5 8 L14.5 8"/>' +
+        '<circle cx="7" cy="16" r="2.3"/>' +
+        '<circle cx="17" cy="16" r="2.3"/>' +
         '</svg>';
       slot.appendChild(badge);
     });

@@ -61,33 +61,49 @@
     }
   })();
 
-  // ---- Scroll-to-the-end stamp ----
-  (function () {
-    var fired = false;
+  // ---- Scroll-to-the-end stamp, About page only ----
+  if (document.querySelector('.mco-staff-grid')) {
+    var scrollFired = false;
     window.addEventListener('scroll', function () {
-      if (fired) return;
+      if (scrollFired) return;
       var atBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 4;
       if (!atBottom) return;
-      fired = true;
+      scrollFired = true;
       showMiniToast('END OF FILE', 'corner');
       log('scroll-end');
     }, { passive: true });
-  })();
+  }
 
-  // ---- Right-click denial, About page only ----
-  if (document.querySelector('.mco-staff-grid')) {
+  // ---- Right-click denial, Crime Blotter only ----
+  if (document.querySelector('a[href="crime.html"][aria-current="page"]')) {
     document.addEventListener('contextmenu', function (e) {
       e.preventDefault();
-      showMiniToast('REQUEST DENIED — this page redacts on contact.', 'center');
+      showMiniToast('ACCESS DENIED — Don’t be a snitch...', 'center');
       log('right-click');
     });
   }
 
-  // ---- Otis cameo, Crime Blotter only ----
-  var otis = document.querySelector('.mco-otis-cameo');
-  if (otis) {
-    otis.addEventListener('click', function () {
-      showMiniToast('Filed from an unsecured trash receptacle. — Otis', 'corner');
+  // ---- Otis, Classifieds page: click the Lost & Found header ----
+  var otisTrigger = document.querySelector('[data-mco-otis-trigger]');
+  if (otisTrigger) {
+    otisTrigger.addEventListener('click', function () {
+      var existing = document.querySelector('.mco-otis-popup');
+      if (existing) existing.remove();
+
+      var popup = document.createElement('div');
+      popup.className = 'mco-otis-popup';
+      popup.innerHTML =
+        '<img src="assets/staff/otis.jpg" alt="">' +
+        '<span>Looking for something?</span>';
+
+      var header = otisTrigger.closest('.mco-department__header') || otisTrigger.parentElement;
+      header.insertAdjacentElement('afterend', popup);
+      requestAnimationFrame(function () { popup.classList.add('active'); });
+      setTimeout(function () {
+        popup.classList.remove('active');
+        setTimeout(function () { popup.remove(); }, 400);
+      }, 3200);
+
       log('otis');
     });
   }
