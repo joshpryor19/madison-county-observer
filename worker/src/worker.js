@@ -1,4 +1,6 @@
 const ALLOWED_ORIGINS = new Set([
+  'https://themadisoncountyobserver.com',
+  'https://www.themadisoncountyobserver.com',
   'https://joshpryor19.github.io',
 ]);
 

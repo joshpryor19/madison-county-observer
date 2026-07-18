@@ -936,6 +936,51 @@ p {
   white-space: nowrap;
 }
 
+/* Comments */
+
+.mco-comments {
+  margin-top: var(--mco-space-5);
+}
+
+.mco-comments__list {
+  margin-bottom: var(--mco-space-6);
+}
+
+.mco-comments__item {
+  padding: var(--mco-space-4) 0;
+  border-top: 1px solid var(--mco-rule);
+}
+
+.mco-comments__item:last-child {
+  border-bottom: 1px solid var(--mco-rule);
+}
+
+.mco-comments__meta {
+  margin: 0 0 var(--mco-space-2);
+  font-family: var(--mco-font-institutional);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--mco-file-gray);
+}
+
+.mco-comments__body {
+  margin: 0;
+}
+
+.mco-comments__empty {
+  color: var(--mco-file-gray);
+  font-style: italic;
+}
+
+.mco-comments__status {
+  margin: 0;
+  min-height: 1.2em;
+  font-family: var(--mco-font-institutional);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--mco-bureau-green);
+}
+
 /* Easter egg: type WATCHING anywhere to trigger */
 
 #mco-egg-overlay {

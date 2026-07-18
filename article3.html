@@ -54,9 +54,9 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Archivo+Narrow:wght@400;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/mco-theme.css">
 <style>
@@ -204,25 +204,26 @@
     <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke="#121210" stroke-width="4"><path d="M50 8 L92 82 L8 82 Z" stroke-linejoin="round"/><ellipse cx="50" cy="60" rx="24" ry="13"/><circle cx="50" cy="60" r="6" fill="#121210" stroke="none"/></svg>
   </div>
 
-  <section style="border-top:3px double #121210;padding-top:34px">
-    <h3 style="font-family:'Playfair Display',serif;font-weight:700;font-size:26px;margin:0 0 6px">Letters to the Editor</h3>
-    <p style="font-family:'Courier Prime',monospace;font-size:12px;letter-spacing:0.5px;color:#55524a;margin:0 0 26px">Speak now, or forever hold your suspicions.</p>
+  <section class="mco-reading-column" style="border-top:3px double var(--mco-ink);padding-top:var(--mco-space-6);margin-top:var(--mco-space-6)">
+    <h3 style="margin:0 0 4px">Letters to the Editor</h3>
+    <p class="mco-deck" style="font-size:1rem;margin:0 0 var(--mco-space-5)">Speak now, or forever hold your suspicions.</p>
 
-    <script src="https://giscus.app/client.js"
-            data-repo="joshpryor19/madison-county-observer"
-            data-repo-id="R_kgDOTYdKVg"
-            data-category="General"
-            data-category-id="DIC_kwDOTYdKVs4DBM6Z"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="bottom"
-            data-theme="preferred_color_scheme"
-            data-lang="en"
-            crossorigin="anonymous"
-            async>
-    </script>
+    <div class="mco-comments" data-mco-comments="bge-celebration">
+      <div class="mco-comments__list" aria-live="polite"></div>
+
+      <form class="mco-form mco-comments__form">
+        <label>
+          Your name
+          <input type="text" class="mco-comments__name" placeholder="A Concerned Citizen" autocomplete="name" maxlength="80">
+        </label>
+        <label>
+          Your letter
+          <textarea class="mco-comments__text" placeholder="What did you see?" rows="4" maxlength="2000" required></textarea>
+        </label>
+        <button class="mco-button mco-comments__submit" type="submit">Submit Testimony</button>
+        <p class="mco-comments__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
   </section>
 
   <section class="mco-continue" aria-labelledby="continue-heading">
@@ -280,6 +281,7 @@
 </div>
 
 <script type="module" src="js/main.js"></script>
+<script src="js/comments.js"></script>
 <script src="js/easter-eggs.js"></script>
 </body>
 </html>
