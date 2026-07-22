@@ -69,7 +69,7 @@
   }
 
   (function () {
-    var contactLink = document.querySelector('.mco-footer a[href="contact.html"]');
+    var contactLink = document.querySelector('.mco-footer a[href$="contact.html"]');
     if (!contactLink) return;
     var btn = document.createElement('button');
     btn.type = 'button';
