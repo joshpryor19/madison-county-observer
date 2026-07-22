@@ -1019,9 +1019,92 @@ p {
 
 .mco-case-badge {
   display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-left: 8px;
-  color: var(--mco-file-gray);
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--mco-ink);
+  cursor: pointer;
   vertical-align: middle;
+}
+
+.mco-case-badge__label {
+  font-family: var(--mco-font-data);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+/* Authorized Access seal: shared by the footer badge and the completion
+   sequence, rendered at two sizes via modifier class. */
+
+.mco-seal {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.mco-seal--large {
+  width: 130px;
+  height: 130px;
+}
+
+.mco-seal--small {
+  width: 36px;
+  height: 36px;
+}
+
+@media (max-width: 640px) {
+  .mco-seal--large {
+    width: 104px;
+    height: 104px;
+  }
+
+  .mco-seal--small {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.mco-seal__ring-outer {
+  fill: none;
+  stroke: var(--mco-ink);
+  stroke-width: 2;
+}
+
+.mco-seal__ring-inner {
+  fill: none;
+  stroke: #a8863f;
+  stroke-width: 1.4;
+}
+
+.mco-seal__ticks line {
+  stroke: #a8863f;
+  stroke-width: 1.1;
+}
+
+.mco-seal__text {
+  font-family: var(--mco-font-institutional);
+  font-size: 7.6px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  fill: var(--mco-ink);
+}
+
+.mco-seal__glyph {
+  fill: none;
+  stroke: #a8863f;
+  stroke-width: 1.6;
+}
+
+.mco-seal__pupil {
+  fill: #a8863f;
+  stroke: none;
 }
 
 /* Small transient toasts reused by the print/scroll/right-click/Otis eggs */
@@ -1079,7 +1162,11 @@ p {
   #mco-case-file-toast,
   .mco-mini-toast,
   .mco-otis-cameo,
-  .mco-nav-toggle {
+  .mco-nav-toggle,
+  #mco-clearance-overlay,
+  #mco-classified-overlay,
+  #mco-print-preview,
+  .mco-footer-util {
     display: none !important;
   }
 
@@ -1088,20 +1175,318 @@ p {
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 70%;
-    max-width: 26rem;
+    width: 74%;
+    max-width: 30rem;
     transform: translate(-50%, -50%) rotate(-28deg);
     text-align: center;
     font-family: var(--mco-font-institutional);
-    font-size: 1.15rem;
-    font-weight: 700;
+    font-size: 1.55rem;
+    font-weight: 800;
     letter-spacing: 0.05em;
-    line-height: 1.4;
-    color: rgb(23 25 21 / 18%);
+    line-height: 1.35;
+    color: rgb(169 72 52 / 46%);
     pointer-events: none;
     z-index: 9999;
     white-space: normal;
   }
+}
+
+/* Footer utility button ("Printable Copy"), styled to match the plain text
+   links beside it rather than looking like a button */
+
+.mco-footer-util {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+/* Simulated print-preview overlay: mobile-reachable equivalent of the
+   print watermark egg, triggered from the footer's Printable Copy control */
+
+#mco-print-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 1400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(23 25 21 / 55%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#mco-print-preview.active {
+  opacity: 1;
+}
+
+.mco-print-preview__doc {
+  position: relative;
+  width: min(100%, 300px);
+  aspect-ratio: 3 / 4;
+  background: var(--mco-paper-light);
+  border: 1px solid var(--mco-ink);
+  box-shadow: 0 10px 30px rgb(23 25 21 / 35%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.94);
+  transition: transform 0.3s ease;
+}
+
+#mco-print-preview.active .mco-print-preview__doc {
+  transform: scale(1);
+}
+
+.mco-print-preview__stamp {
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-24deg);
+  font-family: var(--mco-font-institutional);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  color: rgb(169 72 52 / 70%);
+  text-align: center;
+  width: 80%;
+}
+
+.mco-print-preview__date {
+  position: absolute;
+  bottom: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mco-font-data);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--mco-file-gray);
+}
+
+/* Completion sequence: plays once, when the seventh observation lands.
+   Dims the page, sweeps a green scan line, then reveals the seal and the
+   way into Classified File 001. */
+
+.mco-clearance-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(9 17 13 / 82%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+.mco-clearance-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mco-clearance-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -6px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #3ddc84, transparent);
+  box-shadow: 0 0 16px 5px rgb(61 220 132 / 65%);
+  opacity: 0;
+}
+
+.mco-clearance-overlay.active .mco-clearance-scan {
+  animation: mco-clearance-sweep 1.7s ease-in-out;
+}
+
+@keyframes mco-clearance-sweep {
+  0% { top: -6px; opacity: 0; }
+  8% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+.mco-clearance-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 24px;
+  text-align: center;
+}
+
+.mco-clearance-headline,
+.mco-clearance-seal,
+.mco-clearance-file {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.mco-clearance-overlay.active .mco-clearance-headline {
+  animation: mco-clearance-fade-in 0.5s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.mco-clearance-overlay.active .mco-clearance-seal {
+  animation: mco-clearance-fade-in 0.5s ease forwards;
+  animation-delay: 1.75s;
+}
+
+.mco-clearance-overlay.active .mco-clearance-file {
+  animation: mco-clearance-fade-in 0.5s ease forwards;
+  animation-delay: 2.2s;
+}
+
+@keyframes mco-clearance-fade-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mco-clearance-headline {
+  margin: 0;
+  font-family: var(--mco-font-institutional);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: #7fe3a8;
+}
+
+.mco-clearance-file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid #7fe3a8;
+  background: rgb(20 34 27 / 80%);
+  color: var(--mco-paper-light);
+  padding: 10px 22px;
+  cursor: pointer;
+  font-family: var(--mco-font-data);
+}
+
+.mco-clearance-file__tab {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mco-clearance-file__cta {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: #7fe3a8;
+}
+
+/* Classified File 001 modal, opened from the completion sequence or the
+   permanent footer seal */
+
+.mco-classified-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgb(9 17 13 / 78%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mco-classified-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mco-classified-card {
+  position: relative;
+  width: min(100%, 380px);
+  border: 1px solid var(--mco-ink);
+  background: var(--mco-paper-light);
+  padding: 28px 24px 24px;
+  font-family: var(--mco-font-data);
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.mco-classified-overlay.active .mco-classified-card {
+  transform: translateY(0);
+}
+
+.mco-classified-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--mco-ink);
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mco-classified-stamp {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 3px 10px;
+  border: 2px solid var(--mco-correction-brick);
+  color: var(--mco-correction-brick);
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+}
+
+.mco-classified-card h2 {
+  margin: 0 0 14px;
+  font-family: var(--mco-font-institutional);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mco-classified-meta {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 16px;
+  padding: 10px 0;
+  border-block: 1px solid var(--mco-rule);
+  font-size: 0.78rem;
+}
+
+.mco-classified-meta div {
+  display: flex;
+  gap: 8px;
+}
+
+.mco-classified-meta dt {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mco-file-gray);
+}
+
+.mco-classified-meta dd {
+  margin: 0;
+}
+
+.mco-classified-body {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
 }
 
 /* Otis, Classifieds page: appears when the Lost & Found header is clicked */
