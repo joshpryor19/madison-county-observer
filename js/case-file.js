@@ -88,8 +88,21 @@
     return el;
   }
 
+  function removePanel() {
+    var el = document.getElementById('mco-case-file');
+    if (!el) return;
+    el.classList.remove('active');
+    setTimeout(function () { el.remove(); }, 400);
+  }
+
   function updatePanel() {
-    if (!found.length) return;
+    // Once the log is complete, the footer seal is the permanent record —
+    // the floating tracker has nothing left to count toward and just sits
+    // there taking up space (and implying more eggs than actually exist).
+    if (!found.length || isComplete()) {
+      removePanel();
+      return;
+    }
     var el = ensurePanel();
     requestAnimationFrame(function () { el.classList.add('active'); });
     renderTally(el.querySelector('.mco-case-file__tally'), found.length);
@@ -248,6 +261,7 @@
       updatePanel();
       if (found.length >= TOTAL && !isComplete()) {
         markComplete();
+        removePanel();
         runCompletionSequence();
       }
     }
